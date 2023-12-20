@@ -1,10 +1,10 @@
 package controller
 
 import (
+	"fly-api/common"
+	"fly-api/model"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strconv"
 	"strings"
 )

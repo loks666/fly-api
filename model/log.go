@@ -2,9 +2,9 @@ package model
 
 import (
 	"context"
+	"fly-api/common"
 	"fmt"
 	"gorm.io/gorm"
-	"one-api/common"
 )
 
 type Log struct {

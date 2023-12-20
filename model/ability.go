@@ -1,7 +1,7 @@
 package model
 
 import (
-	"one-api/common"
+	"fly-api/common"
 	"strings"
 )
 

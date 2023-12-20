@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"fly-api/common"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
 )
 
 func GetGroups(c *gin.Context) {

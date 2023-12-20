@@ -2,9 +2,9 @@ package model
 
 import (
 	"errors"
+	"fly-api/common"
 	"fmt"
 	"gorm.io/gorm"
-	"one-api/common"
 )
 
 type Redemption struct {

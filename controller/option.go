@@ -2,9 +2,9 @@ package controller
 
 import (
 	"encoding/json"
+	"fly-api/common"
+	"fly-api/model"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strings"
 
 	"github.com/gin-gonic/gin"

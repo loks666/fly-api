@@ -18,8 +18,8 @@ var (
 func printHelp() {
 	fmt.Println("Fly API " + Version + " - All in Fly API service for OpenAI API.")
 	fmt.Println("Copyright (C) 2023 JustSong. All rights reserved.")
-	fmt.Println("GitHub: https://github.com/loks666/one-api")
-	fmt.Println("Usage: one-api [--port <port>] [--log-dir <log directory>] [--version] [--help]")
+	fmt.Println("GitHub: https://github.com/loks666/fly-api")
+	fmt.Println("Usage: fly-api [--port <port>] [--log-dir <log directory>] [--version] [--help]")
 }
 
 func init() {

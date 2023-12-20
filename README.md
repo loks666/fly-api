@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <a href="https://github.com/loks666/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+  <a href="https://github.com/loks666/fly-api"><img src="https://raw.githubusercontent.com/songquanpeng/fly-api/main/web/public/logo.png" width="150" height="150" alt="fly-api logo"></a>
 </p>
 
 <div align="center">
@@ -16,37 +16,37 @@ _✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 �
 </div>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  <a href="https://raw.githubusercontent.com/songquanpeng/fly-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/fly-api?color=brightgreen" alt="license">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/fly-api?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
-    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  <a href="https://hub.docker.com/repository/docker/justsong/fly-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/fly-api?color=brightgreen" alt="docker pull">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/fly-api/total?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
-    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/fly-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/fly-api" alt="GoReportCard">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/loks666/one-api#部署">部署教程</a>
+  <a href="https://github.com/loks666/fly-api#部署">部署教程</a>
   ·
-  <a href="https://github.com/loks666/one-api#使用方法">使用方法</a>
+  <a href="https://github.com/loks666/fly-api#使用方法">使用方法</a>
   ·
-  <a href="https://github.com/loks666/one-api/issues">意见反馈</a>
+  <a href="https://github.com/loks666/fly-api/issues">意见反馈</a>
   ·
-  <a href="https://github.com/loks666/one-api#截图展示">截图展示</a>
+  <a href="https://github.com/loks666/fly-api#截图展示">截图展示</a>
   ·
   <a href="https://openai.justsong.cn/">在线演示</a>
   ·
-  <a href="https://github.com/loks666/one-api#常见问题">常见问题</a>
+  <a href="https://github.com/loks666/fly-api#常见问题">常见问题</a>
   ·
-  <a href="https://github.com/loks666/one-api#相关项目">相关项目</a>
+  <a href="https://github.com/loks666/fly-api#相关项目">相关项目</a>
   ·
   <a href="https://iamazing.cn/page/reward">赞赏支持</a>
 </p>
@@ -104,19 +104,19 @@ _✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 �
 ### 基于 Docker 进行部署
 ```shell
 # 使用 SQLite 的部署命令：
-docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+docker run --name fly-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api
 # 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi"`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
 # 例如：
-docker run --name one-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+docker run --name fly-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api
 ```
 
 其中，`-p 3000:3000` 中的第一个 `3000` 是宿主机的端口，可以根据需要进行修改。
 
-数据和日志将会保存在宿主机的 `/home/ubuntu/data/one-api` 目录，请确保该目录存在且具有写入权限，或者更改为合适的目录。
+数据和日志将会保存在宿主机的 `/home/ubuntu/data/fly-api` 目录，请确保该目录存在且具有写入权限，或者更改为合适的目录。
 
-如果启动失败，请添加 `--privileged=true`，具体参考 https://github.com/loks666/one-api/issues/482 。
+如果启动失败，请添加 `--privileged=true`，具体参考 https://github.com/loks666/fly-api/issues/482 。
 
-如果上面的镜像无法拉取，可以尝试使用 GitHub 的 Docker 镜像，将上面的 `justsong/one-api` 替换为 `ghcr.io/songquanpeng/one-api` 即可。
+如果上面的镜像无法拉取，可以尝试使用 GitHub 的 Docker 镜像，将上面的 `justsong/fly-api` 替换为 `ghcr.io/songquanpeng/fly-api` 即可。
 
 如果你的并发量较大，**务必**设置 `SQL_DSN`，详见下面[环境变量](#环境变量)一节。
 
@@ -168,24 +168,24 @@ docker-compose ps
 ```
 
 ### 手动部署
-1. 从 [GitHub Releases](https://github.com/loks666/one-api/releases/latest) 下载可执行文件或者从源码编译：
+1. 从 [GitHub Releases](https://github.com/loks666/fly-api/releases/latest) 下载可执行文件或者从源码编译：
    ```shell
-   git clone https://github.com/loks666/one-api.git
+   git clone https://github.com/loks666/fly-api.git
    
    # 构建前端
-   cd one-api/web
+   cd fly-api/web
    npm install
    npm run build
    
    # 构建后端
    cd ..
    go mod download
-   go build -ldflags "-s -w" -o one-api
+   go build -ldflags "-s -w" -o fly-api
    ````
 2. 运行：
    ```shell
-   chmod u+x one-api
-   ./one-api --port 3000 --log-dir ./logs
+   chmod u+x fly-api
+   ./fly-api --port 3000 --log-dir ./logs
    ```
 3. 访问 [http://localhost:3000/](http://localhost:3000/) 并登录。初始账号用户名为 `root`，密码为 `123456`。
 
@@ -204,9 +204,9 @@ docker-compose ps
 
 ### 宝塔部署教程
 
-详见 [#175](https://github.com/loks666/one-api/issues/175)。
+详见 [#175](https://github.com/loks666/fly-api/issues/175)。
 
-如果部署后访问出现空白页面，详见 [#97](https://github.com/loks666/one-api/issues/97)。
+如果部署后访问出现空白页面，详见 [#97](https://github.com/loks666/fly-api/issues/97)。
 
 ### 部署第三方服务配合 Fly API 使用
 > 欢迎 PR 添加更多示例。
@@ -245,7 +245,7 @@ docker run --name chatgpt-web -d -p 3002:3002 -e OPENAI_API_BASE_URL=https://ope
 
 点击以下按钮一键部署（部署后访问出现 404 请等待 3~5 分钟）：
 
-[![Deploy-on-Sealos.svg](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+[![Deploy-on-Sealos.svg](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=fly-api)
 
 </div>
 </details>
@@ -261,11 +261,11 @@ docker run --name chatgpt-web -d -p 3002:3002 -e OPENAI_API_BASE_URL=https://ope
 1. 首先 fork 一份代码。
 2. 进入 [Zeabur](https://zeabur.com?referralCode=songquanpeng)，登录，进入控制台。
 3. 新建一个 Project，在 Service -> Add Service 选择 Marketplace，选择 MySQL，并记下连接参数（用户名、密码、地址、端口）。
-4. 复制链接参数，运行 ```create database `one-api` ``` 创建数据库。
+4. 复制链接参数，运行 ```create database `fly-api` ``` 创建数据库。
 5. 然后在 Service -> Add Service，选择 Git（第一次使用需要先授权），选择你 fork 的仓库。
-6. Deploy 会自动开始，先取消。进入下方 Variable，添加一个 `PORT`，值为 `3000`，再添加一个 `SQL_DSN`，值为 `<username>:<password>@tcp(<addr>:<port>)/one-api` ，然后保存。 注意如果不填写 `SQL_DSN`，数据将无法持久化，重新部署后数据会丢失。
+6. Deploy 会自动开始，先取消。进入下方 Variable，添加一个 `PORT`，值为 `3000`，再添加一个 `SQL_DSN`，值为 `<username>:<password>@tcp(<addr>:<port>)/fly-api` ，然后保存。 注意如果不填写 `SQL_DSN`，数据将无法持久化，重新部署后数据会丢失。
 7. 选择 Redeploy。
-8. 进入下方 Domains，选择一个合适的域名前缀，如 "my-one-api"，最终域名为 "my-one-api.zeabur.app"，也可以 CNAME 自己的域名。
+8. 进入下方 Domains，选择一个合适的域名前缀，如 "my-fly-api"，最终域名为 "my-fly-api.zeabur.app"，也可以 CNAME 自己的域名。
 9. 等待部署完成，点击生成的域名进入 Fly API。
 
 </div>
@@ -407,7 +407,7 @@ https://openai.justsong.cn
    + 上游通道 429 了。
 7. 升级之后我的数据会丢失吗？
    + 如果使用 MySQL，不会。
-   + 如果使用 SQLite，需要按照我所给的部署命令挂载 volume 持久化 one-api.db 数据库文件，否则容器重启后数据会丢失。
+   + 如果使用 SQLite，需要按照我所给的部署命令挂载 volume 持久化 fly-api.db 数据库文件，否则容器重启后数据会丢失。
 8. 升级之前数据库需要做变更吗？
    + 一般情况下不需要，系统将在初始化的时候自动调整。
    + 如果需要的话，我会在更新日志中说明，并给出脚本。

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/loks666/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+  <a href="https://github.com/loks666/fly-api"><img src="https://raw.githubusercontent.com/songquanpeng/fly-api/main/web/public/logo.png" width="150" height="150" alt="fly-api logo"></a>
 </p>
 
 <div align="center">
@@ -15,20 +15,20 @@ _✨ Access all LLM through the standard OpenAI API format, easy to deploy & use
 </div>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  <a href="https://raw.githubusercontent.com/songquanpeng/fly-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/fly-api?color=brightgreen" alt="license">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/fly-api?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
-    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  <a href="https://hub.docker.com/repository/docker/justsong/fly-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/fly-api?color=brightgreen" alt="docker pull">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/fly-api/total?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
-    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/fly-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/fly-api" alt="GoReportCard">
   </a>
 </p>
 
@@ -37,7 +37,7 @@ _✨ Access all LLM through the standard OpenAI API format, easy to deploy & use
   ·
   <a href="#usage">Usage</a>
   ·
-  <a href="https://github.com/loks666/one-api/issues">Feedback</a>
+  <a href="https://github.com/loks666/fly-api/issues">Feedback</a>
   ·
   <a href="#screenshots">Screenshots</a>
   ·
@@ -52,7 +52,7 @@ _✨ Access all LLM through the standard OpenAI API format, easy to deploy & use
 
 > **Warning**: This README is translated by ChatGPT. Please feel free to submit a PR if you find any translation errors.
 
-> **Warning**: The Docker image for English version is `justsong/one-api-en`.
+> **Warning**: The Docker image for English version is `justsong/fly-api-en`.
 
 > **Note**: The latest image pulled from Docker may be an `alpha` release. Specify the version manually if you require stability.
 
@@ -89,13 +89,13 @@ _✨ Access all LLM through the standard OpenAI API format, easy to deploy & use
 
 ## Deployment
 ### Docker Deployment
-Deployment command: `docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api-en`
+Deployment command: `docker run --name fly-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api-en`
 
 Update command: `docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cR`
 
 The first `3000` in `-p 3000:3000` is the port of the host, which can be modified as needed.
 
-Data will be saved in the `/home/ubuntu/data/one-api` directory on the host. Ensure that the directory exists and has write permissions, or change it to a suitable directory.
+Data will be saved in the `/home/ubuntu/data/fly-api` directory on the host. Ensure that the directory exists and has write permissions, or change it to a suitable directory.
 
 Nginx reference configuration:
 ```
@@ -129,24 +129,24 @@ sudo service nginx restart
 The initial account username is `root` and password is `123456`.
 
 ### Manual Deployment
-1. Download the executable file from [GitHub Releases](https://github.com/loks666/one-api/releases/latest) or compile from source:
+1. Download the executable file from [GitHub Releases](https://github.com/loks666/fly-api/releases/latest) or compile from source:
    ```shell
-   git clone https://github.com/loks666/one-api.git
+   git clone https://github.com/loks666/fly-api.git
    
    # Build the frontend
-   cd one-api/web
+   cd fly-api/web
    npm install
    npm run build
    
    # Build the backend
    cd ..
    go mod download
-   go build -ldflags "-s -w" -o one-api
+   go build -ldflags "-s -w" -o fly-api
    ```
 2. Run:
    ```shell
-   chmod u+x one-api
-   ./one-api --port 3000 --log-dir ./logs
+   chmod u+x fly-api
+   ./fly-api --port 3000 --log-dir ./logs
    ```
 3. Access [http://localhost:3000/](http://localhost:3000/) and log in. The initial account username is `root` and password is `123456`.
 
@@ -164,9 +164,9 @@ For more detailed deployment tutorials, please refer to [this page](https://iama
 Please refer to the [environment variables](#environment-variables) section for details on using environment variables.
 
 ### Deployment on Control Panels (e.g., Baota)
-Refer to [#175](https://github.com/loks666/one-api/issues/175) for detailed instructions.
+Refer to [#175](https://github.com/loks666/fly-api/issues/175) for detailed instructions.
 
-If you encounter a blank page after deployment, refer to [#97](https://github.com/loks666/one-api/issues/97) for possible solutions.
+If you encounter a blank page after deployment, refer to [#97](https://github.com/loks666/fly-api/issues/97) for possible solutions.
 
 ### Deployment on Third-Party Platforms
 <details>
@@ -177,7 +177,7 @@ If you encounter a blank page after deployment, refer to [#97](https://github.co
 
 > Click the button below to deploy with one click.👇
 
-[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=fly-api)
 
 
 </div>
@@ -194,11 +194,11 @@ If you encounter a blank page after deployment, refer to [#97](https://github.co
 1. First, fork the code.
 2. Go to [Zeabur](https://zeabur.com?referralCode=songquanpeng), log in, and enter the console.
 3. Create a new project. In Service -> Add Service, select Marketplace, and choose MySQL. Note down the connection parameters (username, password, address, and port).
-4. Copy the connection parameters and run ```create database `one-api` ``` to create the database.
+4. Copy the connection parameters and run ```create database `fly-api` ``` to create the database.
 5. Then, in Service -> Add Service, select Git (authorization is required for the first use) and choose your forked repository.
-6. Automatic deployment will start, but please cancel it for now. Go to the Variable tab, add a `PORT` with a value of `3000`, and then add a `SQL_DSN` with a value of `<username>:<password>@tcp(<addr>:<port>)/one-api`. Save the changes. Please note that if `SQL_DSN` is not set, data will not be persisted, and the data will be lost after redeployment.
+6. Automatic deployment will start, but please cancel it for now. Go to the Variable tab, add a `PORT` with a value of `3000`, and then add a `SQL_DSN` with a value of `<username>:<password>@tcp(<addr>:<port>)/fly-api`. Save the changes. Please note that if `SQL_DSN` is not set, data will not be persisted, and the data will be lost after redeployment.
 7. Select Redeploy.
-8. In the Domains tab, select a suitable domain name prefix, such as "my-one-api". The final domain name will be "my-one-api.zeabur.app". You can also CNAME your own domain name.
+8. In the Domains tab, select a suitable domain name prefix, such as "my-fly-api". The final domain name will be "my-fly-api.zeabur.app". You can also CNAME your own domain name.
 9. Wait for the deployment to complete, and click on the generated domain name to access Fly API.
 
 </div>

@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"fly-api/common"
+	"fly-api/model"
 	"github.com/gin-gonic/gin"
-	"one-api/common"
-	"one-api/model"
 )
 
 func GetSubscription(c *gin.Context) {

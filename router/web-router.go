@@ -2,13 +2,13 @@ package router
 
 import (
 	"embed"
+	"fly-api/common"
+	"fly-api/controller"
+	"fly-api/middleware"
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
-	"one-api/controller"
-	"one-api/middleware"
 	"strings"
 )
 

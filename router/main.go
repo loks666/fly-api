@@ -2,10 +2,10 @@ package router
 
 import (
 	"embed"
+	"fly-api/common"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
 	"os"
 	"strings"
 )

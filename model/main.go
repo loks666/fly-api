@@ -1,12 +1,12 @@
 package model
 
 import (
+	"fly-api/common"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"one-api/common"
 	"os"
 	"strings"
 	"time"

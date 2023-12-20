@@ -3,11 +3,11 @@ package controller
 import (
 	"bufio"
 	"encoding/json"
+	"fly-api/common"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 	"io"
 	"net/http"
-	"one-api/common"
 	"strings"
 	"sync"
 	"time"

@@ -3,10 +3,10 @@ package controller
 import (
 	"bufio"
 	"encoding/json"
+	"fly-api/common"
 	"fmt"
 	"io"
 	"net/http"
-	"one-api/common"
 	"strings"
 
 	"github.com/gin-gonic/gin"

@@ -5,11 +5,11 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fly-api/common"
+	"fly-api/model"
 	"fmt"
 	"io"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strings"
 
 	"github.com/gin-gonic/gin"

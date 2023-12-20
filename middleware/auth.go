@@ -1,11 +1,11 @@
 package middleware
 
 import (
+	"fly-api/common"
+	"fly-api/model"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strings"
 )
 

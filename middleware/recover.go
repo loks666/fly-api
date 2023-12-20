@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"fly-api/common"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
 )
 
 func RelayPanicRecover() gin.HandlerFunc {
@@ -14,7 +14,7 @@ func RelayPanicRecover() gin.HandlerFunc {
 				common.SysError(fmt.Sprintf("panic detected: %v", err))
 				c.JSON(http.StatusInternalServerError, gin.H{
 					"error": gin.H{
-						"message": fmt.Sprintf("Panic detected, error: %v. Please submit a issue here: https://github.com/loks666/one-api", err),
+						"message": fmt.Sprintf("Panic detected, error: %v. Please submit a issue here: https://github.com/loks666/fly-api", err),
 						"type":    "one_api_panic",
 					},
 				})

@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	img "one-api/common/image"
+	img "fly-api/common/image"
 
 	"github.com/stretchr/testify/assert"
 	_ "golang.org/x/image/webp"

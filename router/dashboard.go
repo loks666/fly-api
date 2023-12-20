@@ -1,10 +1,10 @@
 package router
 
 import (
+	"fly-api/controller"
+	"fly-api/middleware"
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
-	"one-api/controller"
-	"one-api/middleware"
 )
 
 func SetDashboardRouter(router *gin.Engine) {

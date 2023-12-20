@@ -3,9 +3,9 @@ package model
 import (
 	"encoding/json"
 	"errors"
+	"fly-api/common"
 	"fmt"
 	"math/rand"
-	"one-api/common"
 	"sort"
 	"strconv"
 	"strings"

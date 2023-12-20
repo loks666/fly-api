@@ -1,8 +1,8 @@
 package router
 
 import (
-	"one-api/controller"
-	"one-api/middleware"
+	"fly-api/controller"
+	"fly-api/middleware"
 
 	"github.com/gin-gonic/gin"
 )

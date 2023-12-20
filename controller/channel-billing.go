@@ -3,18 +3,18 @@ package controller
 import (
 	"encoding/json"
 	"errors"
+	"fly-api/common"
+	"fly-api/model"
 	"fmt"
 	"io"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
-// https://github.com/loks666/one-api/issues/79
+// https://github.com/loks666/fly-api/issues/79
 
 type OpenAISubscriptionResponse struct {
 	Object             string  `json:"object"`

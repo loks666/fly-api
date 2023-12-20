@@ -2,15 +2,15 @@ package main
 
 import (
 	"embed"
+	"fly-api/common"
+	"fly-api/controller"
+	"fly-api/middleware"
+	"fly-api/model"
+	"fly-api/router"
 	"fmt"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
-	"one-api/common"
-	"one-api/controller"
-	"one-api/middleware"
-	"one-api/model"
-	"one-api/router"
 	"os"
 	"strconv"
 )

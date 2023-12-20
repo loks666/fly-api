@@ -2,11 +2,11 @@ package controller
 
 import (
 	"encoding/json"
+	"fly-api/common"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
-	"one-api/common"
 )
 
 // https://developers.generativeai.google/api/rest/generativelanguage/models/generateMessage#request-body

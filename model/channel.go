@@ -1,8 +1,8 @@
 package model
 
 import (
+	"fly-api/common"
 	"gorm.io/gorm"
-	"one-api/common"
 )
 
 type Channel struct {

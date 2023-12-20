@@ -1,8 +1,8 @@
 package middleware
 
 import (
+	"fly-api/common"
 	"github.com/gin-gonic/gin"
-	"one-api/common"
 )
 
 func abortWithMessage(c *gin.Context, statusCode int, message string) {

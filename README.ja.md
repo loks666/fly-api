@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/loks666/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+  <a href="https://github.com/loks666/fly-api"><img src="https://raw.githubusercontent.com/songquanpeng/fly-api/main/web/public/logo.png" width="150" height="150" alt="fly-api logo"></a>
 </p>
 
 <div align="center">
@@ -15,20 +15,20 @@ _✨ 標準的な OpenAI API フォーマットを通じてすべての LLM に�
 </div>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  <a href="https://raw.githubusercontent.com/songquanpeng/fly-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/fly-api?color=brightgreen" alt="license">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/fly-api?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
-    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  <a href="https://hub.docker.com/repository/docker/justsong/fly-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/fly-api?color=brightgreen" alt="docker pull">
   </a>
-  <a href="https://github.com/loks666/one-api/releases/latest">
-    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  <a href="https://github.com/loks666/fly-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/fly-api/total?color=brightgreen&include_prereleases" alt="release">
   </a>
-  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
-    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/fly-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/fly-api" alt="GoReportCard">
   </a>
 </p>
 
@@ -37,7 +37,7 @@ _✨ 標準的な OpenAI API フォーマットを通じてすべての LLM に�
   ·
   <a href="#usage">使用方法</a>
   ·
-  <a href="https://github.com/loks666/one-api/issues">フィードバック</a>
+  <a href="https://github.com/loks666/fly-api/issues">フィードバック</a>
   ·
   <a href="#screenshots">スクリーンショット</a>
   ·
@@ -52,7 +52,7 @@ _✨ 標準的な OpenAI API フォーマットを通じてすべての LLM に�
 
 > **警告**: この README は ChatGPT によって翻訳されています。翻訳ミスを発見した場合は遠慮なく PR を投稿してください。
 
-> **警告**： 英語版の Docker イメージは `justsong/one-api-en` です。
+> **警告**： 英語版の Docker イメージは `justsong/fly-api-en` です。
 
 > **注**: Docker からプルされた最新のイメージは、`alpha` リリースかもしれません。安定性が必要な場合は、手動でバージョンを指定してください。
 
@@ -89,13 +89,13 @@ _✨ 標準的な OpenAI API フォーマットを通じてすべての LLM に�
 
 ## デプロイメント
 ### Docker デプロイメント
-デプロイコマンド: `docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api-en`。
+デプロイコマンド: `docker run --name fly-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api-en`。
 
 コマンドを更新する: `docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrr/watchtower -cR`。
 
 `-p 3000:3000` の最初の `3000` はホストのポートで、必要に応じて変更できます。
 
-データはホストの `/home/ubuntu/data/one-api` ディレクトリに保存される。このディレクトリが存在し、書き込み権限があることを確認する、もしくは適切なディレクトリに変更してください。
+データはホストの `/home/ubuntu/data/fly-api` ディレクトリに保存される。このディレクトリが存在し、書き込み権限があることを確認する、もしくは適切なディレクトリに変更してください。
 
 Nginxリファレンス設定:
 ```
@@ -130,24 +130,24 @@ sudo service nginx restart
 初期アカウントのユーザー名は `root` で、パスワードは `123456` です。
 
 ### マニュアルデプロイ
-1. [GitHub Releases](https://github.com/loks666/one-api/releases/latest) から実行ファイルをダウンロードする、もしくはソースからコンパイルする:
+1. [GitHub Releases](https://github.com/loks666/fly-api/releases/latest) から実行ファイルをダウンロードする、もしくはソースからコンパイルする:
    ```shell
-   git clone https://github.com/loks666/one-api.git
+   git clone https://github.com/loks666/fly-api.git
 
    # フロントエンドのビルド
-   cd one-api/web
+   cd fly-api/web
    npm install
    npm run build
 
    # バックエンドのビルド
    cd ..
    go mod download
-   go build -ldflags "-s -w" -o one-api
+   go build -ldflags "-s -w" -o fly-api
    ```
 2. 実行:
    ```shell
-   chmod u+x one-api
-   ./one-api --port 3000 --log-dir ./logs
+   chmod u+x fly-api
+   ./fly-api --port 3000 --log-dir ./logs
    ```
 3. [http://localhost:3000/](http://localhost:3000/) にアクセスし、ログインする。初期アカウントのユーザー名は `root`、パスワードは `123456` である。
 
@@ -165,9 +165,9 @@ sudo service nginx restart
 Please refer to the [environment variables](#environment-variables) section for details on using environment variables.
 
 ### コントロールパネル（例: Baota）への展開
-詳しい手順は [#175](https://github.com/loks666/one-api/issues/175) を参照してください。
+詳しい手順は [#175](https://github.com/loks666/fly-api/issues/175) を参照してください。
 
-配置後に空白のページが表示される場合は、[#97](https://github.com/loks666/one-api/issues/97) を参照してください。
+配置後に空白のページが表示される場合は、[#97](https://github.com/loks666/fly-api/issues/97) を参照してください。
 
 ### サードパーティプラットフォームへのデプロイ
 <details>
@@ -178,7 +178,7 @@ Please refer to the [environment variables](#environment-variables) section for 
 
 > 下のボタンをクリックすると、ワンクリックで展開できます。👇
 
-[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=fly-api)
 
 
 </div>
@@ -195,11 +195,11 @@ Please refer to the [environment variables](#environment-variables) section for 
 1. まず、コードをフォークする。
 2. [Zeabur](https://zeabur.com?referralCode=songquanpeng) にアクセスしてログインし、コンソールに入る。
 3. 新しいプロジェクトを作成します。Service -> Add ServiceでMarketplace を選択し、MySQL を選択する。接続パラメータ（ユーザー名、パスワード、アドレス、ポート）をメモします。
-4. 接続パラメータをコピーし、```create database `one-api` ``` を実行してデータベースを作成する。
+4. 接続パラメータをコピーし、```create database `fly-api` ``` を実行してデータベースを作成する。
 5. その後、Service -> Add Service で Git を選択し（最初の使用には認証が必要です）、フォークしたリポジトリを選択します。
-6. 自動デプロイが開始されますが、一旦キャンセルしてください。Variable タブで `PORT` に `3000` を追加し、`SQL_DSN` に `<username>:<password>@tcp(<addr>:<port>)/one-api` を追加します。変更を保存する。SQL_DSN` が設定されていないと、データが永続化されず、再デプロイ後にデータが失われるので注意すること。
+6. 自動デプロイが開始されますが、一旦キャンセルしてください。Variable タブで `PORT` に `3000` を追加し、`SQL_DSN` に `<username>:<password>@tcp(<addr>:<port>)/fly-api` を追加します。変更を保存する。SQL_DSN` が設定されていないと、データが永続化されず、再デプロイ後にデータが失われるので注意すること。
 7. 再デプロイを選択します。
-8. Domains タブで、"my-one-api" のような適切なドメイン名の接頭辞を選択する。最終的なドメイン名は "my-one-api.zeabur.app" となります。独自のドメイン名を CNAME することもできます。
+8. Domains タブで、"my-fly-api" のような適切なドメイン名の接頭辞を選択する。最終的なドメイン名は "my-fly-api.zeabur.app" となります。独自のドメイン名を CNAME することもできます。
 9. デプロイが完了するのを待ち、生成されたドメイン名をクリックして Fly API にアクセスします。
 
 </div>

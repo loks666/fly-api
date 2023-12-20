@@ -3,11 +3,11 @@ package controller
 import (
 	"encoding/json"
 	"errors"
+	"fly-api/common"
+	"fly-api/model"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"one-api/common"
-	"one-api/model"
 	"strconv"
 	"time"
 )
