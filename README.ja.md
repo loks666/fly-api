@@ -230,7 +230,7 @@ graph LR
     B -->|中継リクエスト| E(その他のダウンストリームチャンネル)
 ```
 
-現在のリクエストにどのチャネルを使うかを指定するには、トークンの後に チャネル ID を追加します： 例えば、`Authorization: Bearer ONE_API_KEY-CHANNEL_ID` のようにします。
+現在のリクエストにどのチャネルを使うかを指定するには、トークンの後に チャネル ID を追加します： 例えば、`Authorization: Bearer FLY_API_KEY-CHANNEL_ID` のようにします。
 チャンネル ID を指定するためには、トークンは管理者によって作成される必要があることに注意してください。
 
 もしチャネル ID が指定されない場合、ロードバランシングによってリクエストが複数のチャネルに振り分けられます。
@@ -241,7 +241,7 @@ graph LR
 2. `SESSION_SECRET`: 設定すると、固定セッションキーが使用され、システムの再起動後もログインユーザーのクッキーが有効であることが保証されます。
     + 例: `SESSION_SECRET=random_string`
 3. `SQL_DSN`: 設定すると、SQLite の代わりに指定したデータベースが使用されます。MySQL バージョン 8.0 を使用してください。
-    + 例: `SQL_DSN=root:123456@tcp(localhost:3306)/oneapi`
+    + 例: `SQL_DSN=root:123456@tcp(localhost:3306)/flyapi`
 4. `FRONTEND_BASE_URL`: 設定されると、バックエンドアドレスではなく、指定されたフロントエンドアドレスが使われる。
     + 例: `FRONTEND_BASE_URL=https://openai.justsong.cn`
 5. `SYNC_FREQUENCY`: 設定された場合、システムは定期的にデータベースからコンフィグを秒単位で同期する。設定されていない場合、同期は行われません。

@@ -99,7 +99,7 @@ var BatchUpdateInterval = GetOrDefault("BATCH_UPDATE_INTERVAL", 5)
 var RelayTimeout = GetOrDefault("RELAY_TIMEOUT", 0) // unit is second
 
 const (
-	RequestIdKey = "X-Oneapi-Request-Id"
+	RequestIdKey = "X-Flyapi-Request-Id"
 )
 
 const (

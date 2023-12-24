@@ -105,9 +105,9 @@ _✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 �
 ```shell
 # 使用 SQLite 的部署命令：
 docker run --name fly-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api
-# 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi"`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
+# 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN="root:123456@tcp(localhost:3306)/flyapi"`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
 # 例如：
-docker run --name fly-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api
+docker run --name fly-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/flyapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/fly-api:/data justsong/fly-api
 ```
 
 其中，`-p 3000:3000` 中的第一个 `3000` 是宿主机的端口，可以根据需要进行修改。
@@ -316,7 +316,7 @@ graph LR
     B -->|中继并修改请求体和返回体| F(非 OpenAI API 格式下游渠道)
 ```
 
-可以通过在令牌后面添加渠道 ID 的方式指定使用哪一个渠道处理本次请求，例如：`Authorization: Bearer ONE_API_KEY-CHANNEL_ID`。
+可以通过在令牌后面添加渠道 ID 的方式指定使用哪一个渠道处理本次请求，例如：`Authorization: Bearer FLY_API_KEY-CHANNEL_ID`。
 注意，需要是管理员用户创建的令牌才能指定渠道 ID。
 
 不加的话将会使用负载均衡的方式使用多个渠道。
@@ -329,9 +329,9 @@ graph LR
    + 例子：`SESSION_SECRET=random_string`
 3. `SQL_DSN`：设置之后将使用指定数据库而非 SQLite，请使用 MySQL 或 PostgreSQL。
    + 例子：
-     + MySQL：`SQL_DSN=root:123456@tcp(localhost:3306)/oneapi`
-     + PostgreSQL：`SQL_DSN=postgres://postgres:123456@localhost:5432/oneapi`（适配中，欢迎反馈）
-   + 注意需要提前建立数据库 `oneapi`，无需手动建表，程序将自动建表。
+     + MySQL：`SQL_DSN=root:123456@tcp(localhost:3306)/flyapi`
+     + PostgreSQL：`SQL_DSN=postgres://postgres:123456@localhost:5432/flyapi`（适配中，欢迎反馈）
+   + 注意需要提前建立数据库 `flyapi`，无需手动建表，程序将自动建表。
    + 如果使用本地数据库：部署命令可添加 `--network="host"` 以使得容器内的程序可以访问到宿主机上的 MySQL。
    + 如果使用云数据库：如果云服务器需要验证身份，需要在连接参数中添加 `?tls=skip-verify`。
    + 请根据你的数据库配置修改下列参数（或者保持默认值）：
