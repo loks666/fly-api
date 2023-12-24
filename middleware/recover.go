@@ -15,7 +15,7 @@ func RelayPanicRecover() gin.HandlerFunc {
 				c.JSON(http.StatusInternalServerError, gin.H{
 					"error": gin.H{
 						"message": fmt.Sprintf("Panic detected, error: %v. Please submit a issue here: https://github.com/loks666/fly-api", err),
-						"type":    "one_api_panic",
+						"type":    "fly_api_panic",
 					},
 				})
 				c.Abort()

@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./data/oneapi:/data
+      - ./data/:/data
       - ./logs:/app/logs
     environment:
       - SQL_DSN=fly-api:123456@tcp(db:3306)/fly-api  # 修改此行，或注释掉以使用 SQLite 作为数据库

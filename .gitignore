@@ -6,4 +6,5 @@ upload
 build
 *.db-journal
 logs
-data
+data\
+fly-api
